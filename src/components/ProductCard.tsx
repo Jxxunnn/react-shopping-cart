@@ -22,12 +22,7 @@ export default function ProductCard({ id, imageUrl, name, price, isInCart }: Pro
       <div className="flex items-center justify-between gap-2">
         <div>
           <p className="text-base font-bold line-clamp-1">{name}</p>
-          <p className="text-sm text-gray-500">
-            {price.toLocaleString('ko-KR', {
-              currency: 'RKW',
-            })}{' '}
-            원
-          </p>
+          <p className="text-sm text-gray-500">{price.toLocaleString('ko-KR')} 원</p>
         </div>
         <button type="button" onClick={handleCartClick}>
           {isInCart ? '✅' : '🛒'}
