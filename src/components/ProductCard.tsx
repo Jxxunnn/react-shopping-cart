@@ -5,10 +5,10 @@ import toast from 'react-hot-toast';
 interface ProductProps extends Product {}
 
 export default function ProductCard({ id, imageUrl, name, price, isInCart }: ProductProps) {
-  const { mutate } = useToggleCartMutation({ productId: id, isInCart });
+  const { mutate: mutateCart } = useToggleCartMutation({ productId: id, isInCart });
 
   const handleCartClick = () => {
-    mutate();
+    mutateCart();
     if (isInCart) {
       toast.success('장바구니에서 제거되었습니다.');
       return;
@@ -17,9 +17,9 @@ export default function ProductCard({ id, imageUrl, name, price, isInCart }: Pro
   };
 
   return (
-    <div className="p-2 border border-gray-200 rounded-md flex flex-col gap-2">
-      <img src={imageUrl} alt={name} className="w-full h-48 object-cover" />
-      <div className="flex justify-between items-center gap-2">
+    <div className="flex flex-col gap-2 p-2 border border-gray-200 rounded-md">
+      <img src={imageUrl} alt={name} className="object-cover w-full h-48" />
+      <div className="flex items-center justify-between gap-2">
         <div>
           <p className="text-base font-bold line-clamp-1">{name}</p>
           <p className="text-sm text-gray-500">
