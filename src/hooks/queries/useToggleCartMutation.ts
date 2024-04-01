@@ -30,7 +30,9 @@ export default function useToggleCartMutation({ productId, isInCart }: UseToggle
       return { previousProducts };
     },
     onError: (_, __, context) => {
-      queryClient.setQueryData([PRODUCTS_QUERY_KEY], context?.previousProducts);
+      if (context) {
+        queryClient.setQueryData([PRODUCTS_QUERY_KEY], context.previousProducts);
+      }
     },
   });
 }
