@@ -1,5 +1,5 @@
 import useToggleCartMutation from '@/hooks/queries/useToggleCartMutation';
-import { Product } from '@/models/product.model';
+import type { Product } from '@/models/product.model';
 import toast from 'react-hot-toast';
 
 interface ProductProps extends Product {}

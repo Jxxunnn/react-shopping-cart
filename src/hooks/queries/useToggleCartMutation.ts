@@ -1,6 +1,6 @@
 import addProductToCart from '@/apis/addProductToCart';
 import removeProductFromCart from '@/apis/removeProductFromCart';
-import { Product } from '@/models/product.model';
+import type { Product } from '@/models/product.model';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { PRODUCTS_QUERY_KEY } from './useProductsQuery';
 

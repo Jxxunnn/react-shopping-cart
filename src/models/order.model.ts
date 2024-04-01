@@ -1,4 +1,4 @@
-import { Product } from './product.model';
+import { type Product } from './product.model';
 
 interface OrderDetail extends Product {
   quantity: number;
